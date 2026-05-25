@@ -1,0 +1,15 @@
+{
+  "id": "plato",
+  "name": "柏拉图",
+  "type": "real",
+  "era": "前427-前347",
+  "tags": [
+    "哲学",
+    "理念论",
+    "学院"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/plato/SKILL.md"
+}

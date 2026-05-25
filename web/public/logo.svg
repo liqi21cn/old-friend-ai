@@ -1,0 +1,52 @@
+<!--
+  旧识 · Old Friend AI — placeholder logo
+  Replace with the final PNG by dropping web/public/logo.png and changing
+  the <img src> in components/wizard-shell.tsx + app/login/form.tsx to /logo.png.
+-->
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="旧识 Old Friend AI">
+  <defs>
+    <radialGradient id="ringGrad" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#d8b074" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#8b6a3a" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#2a1d0e" stop-opacity="0.65"/>
+    </radialGradient>
+    <filter id="noise" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>
+      <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.05 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+
+  <!-- outer bark band -->
+  <circle cx="100" cy="100" r="92" fill="url(#ringGrad)"/>
+
+  <!-- concentric annual rings -->
+  <g fill="none" stroke="rgba(245,235,210,0.55)" stroke-width="0.6">
+    <circle cx="100" cy="100" r="86"/>
+    <circle cx="100" cy="100" r="78"/>
+    <circle cx="100" cy="100" r="70"/>
+    <circle cx="100" cy="100" r="62"/>
+    <circle cx="100" cy="100" r="54"/>
+    <circle cx="100" cy="100" r="46"/>
+    <circle cx="100" cy="100" r="38"/>
+    <circle cx="100" cy="100" r="30"/>
+    <circle cx="100" cy="100" r="22"/>
+    <circle cx="100" cy="100" r="14"/>
+    <circle cx="100" cy="100" r="7"/>
+  </g>
+
+  <!-- radial cracks (organic feel) -->
+  <g stroke="rgba(40,25,12,0.55)" stroke-width="0.8" fill="none" stroke-linecap="round">
+    <path d="M100,8  Q102,55 100,100"/>
+    <path d="M195,107 Q150,98 100,100"/>
+    <path d="M100,192 Q98,135 100,100"/>
+    <path d="M9,93 Q60,95 100,100"/>
+    <path d="M40,40 Q70,72 100,100"/>
+    <path d="M160,40 Q130,70 100,100"/>
+    <path d="M40,160 Q70,130 100,100"/>
+    <path d="M160,160 Q130,130 100,100"/>
+  </g>
+
+  <!-- film-grain veneer -->
+  <circle cx="100" cy="100" r="92" filter="url(#noise)" opacity="0.6"/>
+</svg>

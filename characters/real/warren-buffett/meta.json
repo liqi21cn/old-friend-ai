@@ -1,0 +1,14 @@
+{
+  "id": "buffett",
+  "name": "Warren Buffett",
+  "type": "real",
+  "era": "1930-",
+  "tags": [
+    "价值投资",
+    "长期主义"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/buffett/SKILL.md"
+}

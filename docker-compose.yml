@@ -1,0 +1,73 @@
+# Production stack.
+#
+# `web` listens on host port 3000.
+# `mysql` is only reachable inside the ps-network (not exposed to the internet).
+#
+# Files mirrored to host:
+#   ./characters    ← original SKILL.md files (read-mostly, source of truth = DB)
+#   ./transcripts   ← dialogue JSON mirrors
+#   ./screenplays   ← rendered storyboard markdown + json
+#
+# MySQL data lives in the named volume `mysql_data` (NOT host-mounted) for safety.
+
+services:
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: person_skills
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test:
+        - "CMD"
+        - "mysqladmin"
+        - "ping"
+        - "-h"
+        - "127.0.0.1"
+        - "-uroot"
+        - "-p${MYSQL_ROOT_PASSWORD}"
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+    networks:
+      - ps-network
+
+  web:
+    build:
+      context: .
+      dockerfile: web/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    env_file: ./web/.env
+    environment:
+      # Override DATABASE_URL — inside the docker network MySQL is reachable
+      # at hostname `mysql`, not at 127.0.0.1.
+      DATABASE_URL: "mysql://root:${MYSQL_ROOT_PASSWORD}@mysql:3306/person_skills"
+      # Node fetch needs to trust IPv6 disabled if any provider has issues —
+      # left alone by default.
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./characters:/app/characters
+      - ./transcripts:/app/transcripts
+      - ./screenplays:/app/screenplays
+      # Avatars are downloaded once and served as static at /avatars/*.
+      # Bind-mounting keeps them across container rebuilds.
+      - ./avatars:/app/web/public/avatars
+    networks:
+      - ps-network
+
+volumes:
+  mysql_data:
+
+networks:
+  ps-network:
+    driver: bridge

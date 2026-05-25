@@ -1,0 +1,16 @@
+{
+  "id": "tang-taizong",
+  "name": "唐太宗",
+  "type": "real",
+  "era": "598-649",
+  "tags": [
+    "皇帝",
+    "贞观",
+    "纳谏",
+    "李世民"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/tang-taizong/SKILL.md"
+}

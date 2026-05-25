@@ -1,0 +1,16 @@
+{
+  "id": "louis-xiv",
+  "name": "路易十四",
+  "type": "real",
+  "era": "1638-1715",
+  "tags": [
+    "太阳王",
+    "法国",
+    "凡尔赛",
+    "集权"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/louis-xiv/SKILL.md"
+}

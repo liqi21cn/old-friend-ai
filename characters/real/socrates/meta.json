@@ -1,0 +1,15 @@
+{
+  "id": "socrates",
+  "name": "苏格拉底",
+  "type": "real",
+  "era": "前470-前399",
+  "tags": [
+    "哲学",
+    "反问法",
+    "雅典"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/socrates/SKILL.md"
+}

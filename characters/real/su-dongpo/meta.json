@@ -1,0 +1,15 @@
+{
+  "id": "su-dongpo",
+  "name": "苏东坡",
+  "type": "real",
+  "era": "1037-1101",
+  "tags": [
+    "宋词",
+    "豁达",
+    "贬谪"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/su-dongpo/SKILL.md"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "odin",
+  "name": "奥丁",
+  "type": "real",
+  "era": "神话",
+  "tags": [
+    "北欧神话",
+    "主神",
+    "知识"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/odin/SKILL.md"
+}

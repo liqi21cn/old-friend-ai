@@ -1,0 +1,15 @@
+{
+  "id": "shakespeare",
+  "name": "莎士比亚",
+  "type": "real",
+  "era": "1564-1616",
+  "tags": [
+    "剧作家",
+    "英国",
+    "戏剧"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/shakespeare/SKILL.md"
+}

@@ -1,0 +1,31 @@
+node_modules/
+.env
+.env.local
+.env.*.local
+.DS_Store
+*.log
+*.bak
+
+# SSH keys / deploy credentials — never commit
+*.pem
+*.key
+deploy-key*
+
+# Generated session data — kept off the repo
+transcripts/*.json
+screenplays/*.md
+screenplays/*.json
+!transcripts/.gitkeep
+!screenplays/.gitkeep
+
+# Avatars are downloaded at runtime and bind-mounted in production
+avatars/*
+!avatars/.gitkeep
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Editor / OS noise
+.vscode/
+.idea/
+*.swp

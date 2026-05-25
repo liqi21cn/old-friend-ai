@@ -1,0 +1,16 @@
+{
+  "id": "kangxi",
+  "name": "康熙",
+  "type": "real",
+  "era": "1654-1722",
+  "tags": [
+    "皇帝",
+    "清",
+    "平三藩",
+    "儒学"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/kangxi/SKILL.md"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "zhuge-liang",
+  "name": "诸葛亮",
+  "type": "real",
+  "era": "181-234",
+  "tags": [
+    "三国",
+    "谋士",
+    "鞠躬尽瘁"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/zhuge-liang/SKILL.md"
+}

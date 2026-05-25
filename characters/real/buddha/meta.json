@@ -1,0 +1,15 @@
+{
+  "id": "buddha",
+  "name": "释迦牟尼",
+  "type": "real",
+  "era": "前563-前483",
+  "tags": [
+    "佛教",
+    "菩提",
+    "涅槃"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/buddha/SKILL.md"
+}

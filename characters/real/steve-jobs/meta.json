@@ -1,0 +1,15 @@
+{
+  "id": "jobs",
+  "name": "Steve Jobs",
+  "type": "real",
+  "era": "1955-2011",
+  "tags": [
+    "产品",
+    "极简",
+    "现实扭曲力场"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/jobs/SKILL.md"
+}

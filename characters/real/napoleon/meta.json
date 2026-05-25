@@ -1,0 +1,15 @@
+{
+  "id": "napoleon",
+  "name": "拿破仑",
+  "type": "real",
+  "era": "1769-1821",
+  "tags": [
+    "法国皇帝",
+    "战争",
+    "法典"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/napoleon/SKILL.md"
+}

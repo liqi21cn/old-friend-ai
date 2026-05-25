@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Editor / film cinematic dark palette
+       Reference: ui-ux-pro-max design system "Dark Mode (OLED)" + Editor Violet + Filter Cyan
+       Colors stored as raw RGB triplets so Tailwind can use them with / <alpha-value>. */
+    --bg: 9 11 22;             /* near-black with cool tint #090B16 */
+    --surface: 15 18 32;       /* card surface #0F1220 */
+    --elevated: 22 26 44;      /* hover / elevated surface */
+    --muted: 28 32 51;         /* input fill, chip bg */
+
+    --fg: 245 247 255;         /* primary text */
+    --fg-subtle: 168 175 200;  /* secondary text */
+    --fg-faint: 110 117 138;   /* helper text, placeholders */
+
+    --border: 38 43 64;        /* subtle hairline */
+    --ring: 124 58 237;        /* focus ring, violet */
+
+    --primary: 124 58 237;     /* #7C3AED — editor violet */
+    --primary-fg: 255 255 255;
+    --secondary: 99 102 241;   /* #6366F1 — indigo */
+    --accent: 8 145 178;       /* #0891B2 — filter cyan, used for stage cues */
+    --destructive: 220 38 38;
+    --success: 22 163 74;
+    --warning: 234 179 8;
+
+    --font-sans: "Inter", "Inter Variable", "ui-sans-serif", "system-ui";
+    --font-mono: "JetBrains Mono", "ui-monospace", "SFMono-Regular", monospace;
+  }
+
+  * {
+    border-color: rgb(var(--border));
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background: rgb(var(--bg));
+    color: rgb(var(--fg));
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Subtle film-grain texture overlay on top-level bg */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgb(255 255 255 / 0.025) 1px,
+      transparent 0
+    );
+    background-size: 4px 4px;
+  }
+
+  ::selection {
+    background: rgb(var(--primary) / 0.4);
+    color: rgb(var(--fg));
+  }
+
+  /* Custom scrollbar tuned for dark theme */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--bg));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--border));
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--fg-faint));
+  }
+
+  /* Reduced motion: kill all transitions/animations */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Etched separator inspired by editing console UIs */
+  .hr-etched {
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgb(var(--border)),
+      transparent
+    );
+    height: 1px;
+  }
+
+  /* Tabular numerals for shot durations, sequence IDs, token counts */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Mono micro-label used for sequence IDs, status chips, file paths */
+  .label-mono {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgb(var(--fg-faint));
+  }
+
+  /* Shimmer loading bar */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgb(var(--muted)) 0%,
+      rgb(var(--elevated)) 50%,
+      rgb(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.8s linear infinite;
+  }
+
+  .focus-ring {
+    outline: none;
+    box-shadow:
+      0 0 0 2px rgb(var(--bg)),
+      0 0 0 4px rgb(var(--ring) / 0.65);
+  }
+}

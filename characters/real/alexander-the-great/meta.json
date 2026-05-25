@@ -1,0 +1,15 @@
+{
+  "id": "alexander-the-great",
+  "name": "亚历山大大帝",
+  "type": "real",
+  "era": "前356-前323",
+  "tags": [
+    "马其顿",
+    "帝国",
+    "东征"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/alexander-the-great/SKILL.md"
+}

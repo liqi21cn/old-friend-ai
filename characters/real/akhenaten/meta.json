@@ -1,0 +1,15 @@
+{
+  "id": "akhenaten",
+  "name": "阿肯那顿",
+  "type": "real",
+  "era": "前14世纪",
+  "tags": [
+    "埃及法老",
+    "一神教",
+    "改革"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/akhenaten/SKILL.md"
+}

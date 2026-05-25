@@ -1,0 +1,15 @@
+{
+  "id": "feynman",
+  "name": "Richard Feynman",
+  "type": "real",
+  "era": "1918-1988",
+  "tags": [
+    "物理",
+    "直觉",
+    "顽童"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/feynman/SKILL.md"
+}

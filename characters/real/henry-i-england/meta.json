@@ -1,0 +1,15 @@
+{
+  "id": "henry-i-england",
+  "name": "英王亨利一世",
+  "type": "real",
+  "era": "1068-1135",
+  "tags": [
+    "诺曼",
+    "英格兰",
+    "法律"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/henry-i-england/SKILL.md"
+}

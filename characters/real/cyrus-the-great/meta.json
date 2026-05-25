@@ -1,0 +1,15 @@
+{
+  "id": "cyrus-the-great",
+  "name": "居鲁士大帝",
+  "type": "real",
+  "era": "前600-前530",
+  "tags": [
+    "波斯",
+    "帝国",
+    "宽容"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/cyrus-the-great/SKILL.md"
+}

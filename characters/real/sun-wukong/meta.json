@@ -1,0 +1,16 @@
+{
+  "id": "sun-wukong",
+  "name": "孙悟空",
+  "type": "real",
+  "era": "神话",
+  "tags": [
+    "西游记",
+    "猴王",
+    "叛逆",
+    "神话"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/sun-wukong/SKILL.md"
+}

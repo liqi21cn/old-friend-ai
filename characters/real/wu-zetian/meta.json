@@ -1,0 +1,15 @@
+{
+  "id": "wu-zetian",
+  "name": "武则天",
+  "type": "real",
+  "era": "624-705",
+  "tags": [
+    "女皇",
+    "武周",
+    "权术"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/wu-zetian/SKILL.md"
+}

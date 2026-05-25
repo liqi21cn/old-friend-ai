@@ -1,0 +1,15 @@
+{
+  "id": "loki",
+  "name": "洛基",
+  "type": "real",
+  "era": "神话",
+  "tags": [
+    "北欧神话",
+    "诡计",
+    "变形"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/loki/SKILL.md"
+}

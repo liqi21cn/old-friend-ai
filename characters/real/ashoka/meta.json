@@ -1,0 +1,15 @@
+{
+  "id": "ashoka",
+  "name": "阿育王",
+  "type": "real",
+  "era": "前304-前232",
+  "tags": [
+    "孔雀王朝",
+    "转皈",
+    "法柱"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/ashoka/SKILL.md"
+}

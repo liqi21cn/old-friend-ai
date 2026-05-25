@@ -1,0 +1,12 @@
+{
+  "name": "person-skills",
+  "version": "0.1.0",
+  "description": "角色技能驱动的短剧生成器：用 nuwa-skill 蒸馏真人角色 skill，配套虚构角色分支，多 Agent 并行扮演对话，渲染为对齐 AI 短剧制作平台 Sequence ID 规范的分镜脚本。",
+  "author": "person-skills",
+  "skills": [
+    { "path": "skills/女娲-虚构" },
+    { "path": "skills/对话编排" },
+    { "path": "skills/短剧生成" },
+    { "path": "skills/角色库" }
+  ]
+}

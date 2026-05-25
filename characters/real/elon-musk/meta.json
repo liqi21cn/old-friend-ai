@@ -1,0 +1,15 @@
+{
+  "id": "musk",
+  "name": "Elon Musk",
+  "type": "real",
+  "era": "1971-",
+  "tags": [
+    "火箭",
+    "自动驾驶",
+    "X"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/musk/SKILL.md"
+}

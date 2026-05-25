@@ -1,0 +1,15 @@
+{
+  "id": "lu-xun",
+  "name": "鲁迅",
+  "type": "real",
+  "era": "1881-1936",
+  "tags": [
+    "杂文",
+    "讽刺",
+    "启蒙"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/lu-xun/SKILL.md"
+}

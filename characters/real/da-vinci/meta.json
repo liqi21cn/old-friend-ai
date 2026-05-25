@@ -1,0 +1,15 @@
+{
+  "id": "da-vinci",
+  "name": "达·芬奇",
+  "type": "real",
+  "era": "1452-1519",
+  "tags": [
+    "画家",
+    "科学家",
+    "文艺复兴"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/da-vinci/SKILL.md"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "confucius",
+  "name": "孔子",
+  "type": "real",
+  "era": "前551-前479",
+  "tags": [
+    "儒家",
+    "礼乐",
+    "仁政"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/confucius/SKILL.md"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "ptolemy-iv",
+  "name": "托勒密四世",
+  "type": "real",
+  "era": "前244-前204",
+  "tags": [
+    "法老",
+    "埃及",
+    "托勒密王朝",
+    "希腊化"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/ptolemy-iv/SKILL.md"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "odysseus",
+  "name": "奥德修斯",
+  "type": "real",
+  "era": "神话",
+  "tags": [
+    "希腊神话",
+    "智慧",
+    "归乡"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/odysseus/SKILL.md"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "laozi",
+  "name": "老子",
+  "type": "real",
+  "era": "前6世纪",
+  "tags": [
+    "道家",
+    "无为",
+    "辩证"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/laozi/SKILL.md"
+}

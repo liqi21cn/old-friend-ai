@@ -1,0 +1,15 @@
+{
+  "id": "marcus-aurelius",
+  "name": "马可·奥勒留",
+  "type": "real",
+  "era": "121-180",
+  "tags": [
+    "罗马皇帝",
+    "斯多葛",
+    "沉思录"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/marcus-aurelius/SKILL.md"
+}

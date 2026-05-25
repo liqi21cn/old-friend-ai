@@ -1,0 +1,15 @@
+{
+  "id": "heraclius",
+  "name": "赫拉克利乌斯",
+  "type": "real",
+  "era": "575-641",
+  "tags": [
+    "拜占庭",
+    "皇帝",
+    "与波斯战争"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/heraclius/SKILL.md"
+}

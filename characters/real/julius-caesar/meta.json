@@ -1,0 +1,16 @@
+{
+  "id": "julius-caesar",
+  "name": "凯撒",
+  "type": "real",
+  "era": "前100-前44",
+  "tags": [
+    "独裁官",
+    "罗马",
+    "军事",
+    "改革"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/julius-caesar/SKILL.md"
+}

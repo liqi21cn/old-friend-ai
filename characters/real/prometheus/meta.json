@@ -1,0 +1,15 @@
+{
+  "id": "prometheus",
+  "name": "普罗米修斯",
+  "type": "real",
+  "era": "神话",
+  "tags": [
+    "希腊神话",
+    "泰坦",
+    "盗火"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/prometheus/SKILL.md"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "dante",
+  "name": "但丁",
+  "type": "real",
+  "era": "1265-1321",
+  "tags": [
+    "诗人",
+    "神曲",
+    "意大利"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/dante/SKILL.md"
+}

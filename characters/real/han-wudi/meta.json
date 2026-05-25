@@ -1,0 +1,16 @@
+{
+  "id": "han-wudi",
+  "name": "汉武帝",
+  "type": "real",
+  "era": "前156-前87",
+  "tags": [
+    "皇帝",
+    "西汉",
+    "丝绸之路",
+    "扩张"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/han-wudi/SKILL.md"
+}

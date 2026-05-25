@@ -1,0 +1,16 @@
+{
+  "id": "song-huizong",
+  "name": "宋徽宗",
+  "type": "real",
+  "era": "1082-1135",
+  "tags": [
+    "皇帝",
+    "瘦金体",
+    "书画",
+    "亡国"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/song-huizong/SKILL.md"
+}

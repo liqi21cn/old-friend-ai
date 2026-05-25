@@ -1,0 +1,24 @@
+{
+  "name": "person-skills",
+  "version": "0.1.0",
+  "description": "Character-skill driven screenplay generator. Use Nuwa to mint character skills, run multi-agent parallel dialogues, render as short-drama storyboards.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "index": "tsx scripts/index-characters.ts",
+    "dialogue": "tsx --env-file=.env scripts/run-dialogue.ts",
+    "screenplay": "tsx --env-file=.env scripts/render-screenplay.ts"
+  },
+  "dependencies": {
+    "openai": "^4.77.0",
+    "yaml": "^2.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

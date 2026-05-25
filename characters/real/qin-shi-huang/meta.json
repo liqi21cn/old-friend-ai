@@ -1,0 +1,17 @@
+{
+  "id": "qin-shi-huang",
+  "name": "秦始皇",
+  "type": "real",
+  "era": "前259-前210",
+  "tags": [
+    "皇帝",
+    "秦",
+    "统一",
+    "法家",
+    "长城"
+  ],
+  "portrait": null,
+  "source_work": null,
+  "relations": [],
+  "skill_path": "characters/real/qin-shi-huang/SKILL.md"
+}
