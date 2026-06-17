@@ -17,6 +17,10 @@ import { randomUUID } from "node:crypto";
 import { getClient, LLM_MODEL, llmReasoningExtras } from "@/lib/llm";
 import { REPO_ROOT, readIndex, writeTranscript } from "@/lib/repo";
 import { requireUserId } from "@/lib/auth";
+import {
+  SKILL_DIALOGUE_GUIDE,
+  SKILL_ENDING_GUIDE,
+} from "@/lib/ancient-dialogue-skill";
 
 export const runtime = "nodejs";
 export const maxDuration = 300;
@@ -142,35 +146,41 @@ export async function POST(req: NextRequest) {
           return stages[idx];
         };
 
-        // Map a round to its position in the three-act arc:
-        //   front third → "质疑期" (mutual challenge, mild disdain)
-        //   middle third → "阐发期" (deep exposition from own classics)
-        //   back third → "共鸣期" (mutual respect / fated split)
-        // Tonal guidance is injected into the per-turn brief so even when
-        // stages are absent or hand-edited, characters still hit the arc.
+        // Map a round to its position in the skill's four-stage 交锋 arc
+        // (方法论 → 价值观 → 现实困境 → 终极命运/救赎). The last quarter also
+        // carries 收束转折 guidance (平局 / 微松动 / 定格 —— 没有输赢). This is the
+        // fallback rhythm injected even when the user ran without explicit
+        // stages;越逼越深 means each phase attacks the soft spot of the last.
         const arcPhase = (round: number): {
           name: string;
           guidance: string;
         } => {
           const t = (round - 0.5) / body.rounds; // round 1's midpoint
-          if (t < 1 / 3) {
+          if (t < 1 / 4) {
             return {
-              name: "质疑期（前 1/3）",
+              name: "阶段一 · 方法论之争（你怎么做？）",
               guidance:
-                "本段的情绪基调是『互相质疑、带一点轻蔑或不以为然』。以自身价值体系为绝对前提，直指对方根本预设的漏洞；可以显出『你这点子东西也敢登大雅之堂』的姿态，但不要流于人身攻击。**不要**在这一段就互相承认对方的体系有价值。",
+                "本段咬住「你怎么做？」。各自亮出做法，并用『优点互攻』直指对方做法的代价——把对方最得意的方法攻成它的缺点。可带一点轻蔑或不以为然，但不要人身攻击。先咬住对方上一句的关键词再反打。",
             };
           }
-          if (t < 2 / 3) {
+          if (t < 2 / 4) {
             return {
-              name: "阐发期（中 1/3）",
+              name: "阶段二 · 价值观之争（你为何这么做？）",
               guidance:
-                "本段放下针对对方，**深入阐发自己经典著作中的核心命题**，把本派系的体用、心法、推演逻辑展开。引用频率可适当提高到 1/2，**优先引用自己最有代表性的著作**。这一段是思想厚度的高潮。",
+                "本段从攻击对方上一阶段做法的软肋开始，逼问「你为何这么做？」。把分歧从做法推到价值根源，**深入阐发自己经典著作中的核心命题**，引用频率可提到 1/2，优先引用自己最有代表性的著作。",
+            };
+          }
+          if (t < 3 / 4) {
+            return {
+              name: "阶段三 · 现实困境之争（撞上现实、付代价时还坚持吗？）",
+              guidance:
+                "本段把对方的价值观放到现实困境里检验：当信念撞上现实、要付出真实代价（牺牲、孤独、失败、死亡）时还坚持吗？多用『言行矛盾互刺』和可拍成镜头的命题外旁证来逼问，不要空谈。",
             };
           }
           return {
-            name: "共鸣期（后 1/3）",
+            name: "阶段四 · 终极命运/救赎之争 + 收束转折（没有输赢）",
             guidance:
-              "本段进入『惺惺相惜』或『各自坚守』的层面。经过前面的阐发，你已看到对方体系的内在自洽与崇高，可以承认对方是真正的对手 / 知己，但你**仍坚守你自己的道**。语气从对峙转向沉静，可以带一丝惋惜或敬意；但不要『达成共识』，必须保留各自的本色。",
+              "本段进入终极：面对结局、死亡或永恒，你如何安放自己？经过前面的死磕，你已看到对方体系的内在自洽与崇高，可以承认对方是真正的对手 / 知己，但你**仍坚守你自己的道**。语气从对峙转向沉静，可带一丝惋惜或敬意；收束基调是平局互敬 / 微松动 / 沉默定格——**没有输赢**，不要『达成共识』、不要认输让步、必须保留各自本色。",
           };
         };
 
@@ -209,8 +219,10 @@ export async function POST(req: NextRequest) {
                 c.skill,
                 "",
                 "---",
-                "你正在参与一场多 Agent 戏剧对话。每轮你只能发一段话和可选动作，严格遵守你自己的 SKILL 文档（包括 Limitations）。",
+                "你正在参与一场「东西方思想对决」多 Agent 戏剧对话。每轮你只能发一段话和可选动作，严格遵守你自己的 SKILL 文档（包括 Limitations）。",
                 `每段对白严格控制在 ${MAX_UTTERANCE_CHARS} 个汉字以内（含标点），台词必须凝练，不许铺陈背景或重复信息。`,
+                "",
+                SKILL_DIALOGUE_GUIDE,
               ].join("\n");
               const userPrompt = [
                 history,
@@ -387,7 +399,7 @@ function stageBrief(
   const others = ids.filter((x) => x !== myId).join("、");
   const arcLines = [
     "",
-    "【三段式中的位置】",
+    "【四阶段交锋中的位置】",
     `本轮处于：${arc.name}`,
     arc.guidance,
   ];
@@ -457,8 +469,9 @@ async function generateNarration(
     )
     .join("\n");
   const sys = [
-    "你是一位短剧旁白，文字凝练、留白克制。",
-    "用一段不超过 80 字的中文写出全剧收束：点出冲突结局或情绪余韵，不要复述对白原文，不要使用引号。",
+    "你是一位「东西方思想对决」短视频旁白，文字凝练、留白克制。",
+    SKILL_ENDING_GUIDE,
+    "用一段不超过 80 字的中文写出全剧收束：可用镜像金句或消解式收尾，点出『没有输赢』的余味，不要复述对白原文，不要使用引号，不要判定谁赢。",
   ].join("\n");
   const user = [
     `【场景】${scene.setting}`,
